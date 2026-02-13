@@ -1,0 +1,23 @@
+student report:
+
+date: 2026-02-12
+
+Name : Aryan
+ marks : 100
+ grade : A
+
+
+Name : Rohan
+ marks : 95
+ grade : A
+
+
+Name : Sita
+ marks : 90
+ grade : A
+
+
+Name : Gita
+ marks : 85
+ grade : B
+
