@@ -1,0 +1,99 @@
+  - key: extra_foundation_offer_and_soil_investigation
+    heading_en: Extra Foundation Offer and Soil Investigation
+    heading_da: Ekstra funderingstilbud og jordbundsundersøgelse
+    prompt: |
+      You are writing the section "{heading}" of an extra foundation, levels, and earthworks
+      review report intended for a client-facing summary.
+ 
+      Use ONLY information explicitly stated in DOCUMENT_TEXT.
+ 
+      GENERAL RULES:  
+      - Respond in language: {language}.
+      - All context is already provided elsewhere. Return only the main content for this section,
+        with no intro or framing text.
+      - Do NOT include:
+        - any headings
+        - introductions or summaries
+        - repeated explanations
+        - long explanations or excessive paragraphs
+        - monitoring, testing, or follow-up actions unless explicitly stated
+        - construction methods or execution details
+        - standards, code requirements, or numeric rules unless explicitly stated
+        - legal, contractual, or payment-condition language
+        - future advice or recommendations
+      - Use clear, brief, client-friendly language similar to a short consulting engineer note.
+      - Use short paragraphs and avoid technical depth.
+      - Extract information ONLY if it is explicitly and directly stated in the provided content.
+      - Do NOT infer, assume, generalize, estimate, or apply professional judgment.
+      - Do NOT calculate, recompute, total, average, normalize, convert, or reinterpret any values.
+      - Do NOT merge or reconcile numbers from different parts of the document.
+      - Do NOT compare prices unless a comparison is explicitly written in the source text.
+      - If no relevant information related to extra foundation works, levels, or earthworks
+        is present, return an empty string.
+ 
+      CALCULATION RULES:
+      - Do NOT perform calculations, recomputations, totals, averages, conversions,
+        control calculations, or derived values.
+      - Extract control calculations, assumptions, formulas, ranges, or results
+        ONLY if they are explicitly written in the provided content.
+      - Extract stated scopes for calculations (e.g. house, garage, shed, wind wall,
+        point foundations) ONLY if explicitly stated.
+      - Do NOT apply standard methods, internal logic, or engineering assumptions
+        unless explicitly described in the document.
+ 
+      PRICE RULES:
+      - Extract quoted prices ONLY if explicitly stated.
+      - Preserve amounts exactly as written.
+      - Preserve stated ranges exactly as written.
+      - Preserve VAT status ONLY if explicitly stated.
+      - Preserve inclusions and exclusions ONLY if explicitly listed
+        (e.g. soakaway, extra wells, basement backfill, percolation test).
+      - Do NOT calculate, normalize, reinterpret, or compare prices.
+      - Do NOT assume discounts, savings, payment structure, negotiability,
+        or value judgment unless explicitly stated.
+ 
+      CONTENT RULES:
+      - Extract information ONLY if it is explicitly stated in the provided content.
+ 
+      - Extract stated control calculations or assumptions for extra foundation works
+        ONLY if explicitly written.
+ 
+      - Extract quoted prices for extra foundation works ONLY as written,
+        including total amounts and explicitly stated inclusions or exclusions.
+ 
+      - If explicitly stated, extract any evaluation or description of the price
+        (e.g. reasonable, sharp price, correct price), WITHOUT adding judgment
+        or justification.
+ 
+      - Extract soil-related reasons for extra foundation works ONLY at a high level,
+        including references to OSBL and required excavation depth,
+        ONLY if explicitly stated.
+ 
+      - Mention requirements for sand cushions or sand replacement beneath
+        floors (terrændæk / UN) and strip foundations ONLY at a principle level
+        and ONLY if explicitly stated.
+ 
+      - If explicitly stated, note that sand or soil replacement extends beyond
+        foundation edges, WITHOUT explanation or impact assessment.
+ 
+      - Extract information related to sokkelkote (plinth level) and terrain levels
+        ONLY if explicitly stated, including stated values and described height
+        differences between terrain, sokkelkote, and road.
+ 
+      - If explicitly stated, extract recommendations related to relative level
+        differences (e.g. terrain below sokkelkote),
+        WITHOUT reasoning, justification, or design guidance.
+ 
+      - Extract information on earth removal, backfilling, or soil handling
+        ONLY if explicitly stated, including soil volumes or cost impacts
+        ONLY if explicitly written.
+ 
+      - If explicitly stated, extract alternative approaches for reuse or
+        redistribution of soil on site,
+        WITHOUT suggestion, endorsement, or evaluation.
+ 
+      - Extract soil testing or percolation testing requirements
+        ONLY if explicitly stated.
+ 
+      DOCUMENT_TEXT:
+      {document_text}

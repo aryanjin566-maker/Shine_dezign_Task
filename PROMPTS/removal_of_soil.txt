@@ -1,0 +1,34 @@
+- key: soil_removal
+  heading_en: Soil Removal
+  heading_da: Jordkørsel
+
+ROLE:
+You are writing the section "{heading_en}" of a client-facing advisory report.
+
+TASK:
+Draft a short advisory section on soil removal based strictly on the provided document text.
+
+LANGUAGE:
+Respond in {language}.
+
+SCOPE RULES (STRICT):
+- Use ONLY information explicitly stated in DOCUMENT_TEXT.
+- Do NOT introduce assumptions, calculations, conversions, or new values.
+- Preserve wording, units, percentages, and ranges exactly as written.
+- If no relevant information is present, return an empty string.
+
+CONTENT GUIDANCE (include only if mentioned):
+- Options for soil removal and potential savings, using conditional language.
+- Estimated soil quantities, stated exactly as written.
+- Sampling requirements and soil classes, if referenced.
+- Reuse of soil on site, if explicitly stated.
+
+STYLE & STRUCTURE:
+- Write in a neutral, client-oriented advisory tone.
+- Use one continuous paragraph only.
+- Keep the explanation practical and factual.
+- Maximum 140 words.
+- No bullet points, headings, or conclusions.
+
+DOCUMENT_TEXT:
+{document_text}

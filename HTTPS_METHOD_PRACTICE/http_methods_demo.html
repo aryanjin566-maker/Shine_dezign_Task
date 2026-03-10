@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTTP Request Methods Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      padding: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    button {
+      padding: 10px 15px;
+      margin: 5px;
+      border: none;
+      background: #007bff;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    pre {
+      background: #222;
+      color: #0f0;
+      padding: 10px;
+      border-radius: 5px;
+      max-height: 300px;
+      overflow: auto;
+    }
+  </style>
+</head>
+<body>
+
+<h1>HTTP Request Methods – One Page Demo</h1>
+
+<button onclick="getData()">GET Data</button>
+<button onclick="postData()">POST Data</button>
+<button onclick="putData()">PUT Data</button>
+<button onclick="patchData()">PATCH Data</button>
+<button onclick="deleteData()">DELETE Data</button>
+
+<h3>Output (Console + Below)</h3>
+<pre id="output">Click any button...</pre>
+
+<script>
+const output = document.getElementById("output");
+
+/* GET METHOD */
+function getData() {
+  fetch("https://jsonplaceholder.typicode.com/users")
+    .then(res => res.json())
+    .then(data => {
+      output.textContent = JSON.stringify(data, null, 2);
+    });
+}
+
+/* POST METHOD */
+function postData() {
+  fetch("https://jsonplaceholder.typicode.com/posts", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      title: "Hello World",
+      body: "This is POST method example",
+      userId: 1
+    })
+  })
+  .then(res => res.json())
+  .then(data => {
+    output.textContent = JSON.stringify(data, null, 2);
+  });
+}
+
+/* PUT METHOD */
+function putData() {
+  fetch("https://jsonplaceholder.typicode.com/posts/1", {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      id: 1,
+      title: "Updated Title",
+      body: "PUT replaces entire data",
+      userId: 1
+    })
+  })
+  .then(res => res.json())
+  .then(data => {
+    output.textContent = JSON.stringify(data, null, 2);
+  });
+}
+
+/* PATCH METHOD */
+function patchData() {
+  fetch("https://jsonplaceholder.typicode.com/posts/1", {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      title: "Only Title Updated using PATCH"
+    })
+  })
+  .then(res => res.json())
+  .then(data => {
+    output.textContent = JSON.stringify(data, null, 2);
+  });
+}
+
+/* DELETE METHOD */
+function deleteData() {
+  fetch("https://jsonplaceholder.typicode.com/posts/1", {
+    method: "DELETE"
+  })
+  .then(res => {
+    if (res.ok) {
+      output.textContent = "Data deleted successfully!";
+    }
+  });
+}
+</script>
+
+</body>
+</html>

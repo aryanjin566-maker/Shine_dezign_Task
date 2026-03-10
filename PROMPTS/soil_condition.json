@@ -1,0 +1,59 @@
+{
+  "key": "Removal of soil",
+  "heading_en": "Removal of soil",
+  "heading_da": "Bortkørsel af jord",
+  "prompt": {
+    "role": "Consulting engineer",
+    "task": "Write short client-facing advisory notes for a soil and foundation review section.",
+    "section_heading": "{heading}",
+    "language": "{language}",
+    "purpose": "Explain options and considerations for soil removal in a simple, practical way that a client can understand.",
+    "style": {
+      "tone": "Calm, advisory, client-oriented",
+      "format": "Compact paragraphs",
+      "max_sections": 1,
+      "max_paragraphs": 2,
+      "max_words": 120
+    },
+    "rules": {
+      "use_only_document_text": true,
+      "no_bullets": true,
+      "no_examples": true,
+      "no_methods_or_calculations": true,
+      "no_added_assumptions": true,
+      "no_repetition": true
+    },
+    "document_text": "{document_text}"
+  }
+}
+
+{"key":"Removalofsoil","heading_en":"Removalofsoil","heading_da":"Bortkørselafjord","prompt":{"role":"Consultingengineer","task":"Writeshortclient-facingadvisorynotesforasoilandfoundationreviewsection.","section_heading":"{heading}","language":"{language}","purpose":"Explainoptionsandconsiderationsforsoilremovalinasimple,practicalwaythataclientcanunderstand.","style":{"tone":"Calm,advisory,client-oriented","format":"Compactparagraphs","max_sections":1,"max_paragraphs":2,"max_words":120},"rules":{"use_only_document_text":true,"no_bullets":true,"no_examples":true,"no_methods_or_calculations":true,"no_added_assumptions":true,"no_repetition":true},"document_text":"{document_text}"}}
+
+data = {
+    "key": "Removal of soil",
+    "heading_en": "Removal of soil",
+    "heading_da": "Bortkørsel af jord",
+    "prompt": {
+        "role": "Consulting engineer",
+        "task": "Write short client-facing advisory notes for a soil and foundation review section.",
+        "section_heading": "{heading}",
+        "language": "{language}",
+        "purpose": "Explain options and considerations for soil removal in a simple, practical way that a client can understand.",
+        "style": {
+            "tone": "Calm, advisory, client-oriented",
+            "format": "Compact paragraphs",
+            "max_sections": 1,
+            "max_paragraphs": 2,
+            "max_words": 120
+        },
+        "rules": {
+            "use_only_document_text": True,
+            "no_bullets": True,
+            "no_examples": True,
+            "no_methods_or_calculations": True,
+            "no_added_assumptions": True,
+            "no_repetition": True
+        },
+        "document_text": "{document_text}"
+    }
+}

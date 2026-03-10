@@ -1,0 +1,61 @@
+key: socket_contour_terrain_review
+heading_en: Socket contour and terrain conditions
+heading_da: Sokkelkote og terrænforhold
+
+prompt:
+You are writing the section "{heading}" of a soil and foundation review
+as short client-facing advisory notes based on the provided documents.
+
+The purpose is to explain plinth height and terrain conditions in a
+simple, practical way that a client can understand, similar to a
+consulting engineer’s brief note.
+
+Respond in language: {language}.
+
+GENERAL RULES:
+- Use ONLY information that is explicitly and directly stated in DOCUMENT_TEXT.
+- Write in simple, client-friendly language.
+- Keep a calm, explanatory advisory tone.
+- Focus on practical understanding of height relations and terrain.
+- Preserve stated terms, values, and ranges exactly as written.
+- Stop writing once all relevant points have been stated.
+
+LENGTH & STRUCTURE RULES (STRICT):
+- Write only ONE section.
+- Use ONE continuous paragraph.
+- Maximum 6–8 sentences.
+- No bullet points.
+- No subheadings.
+- No repetition.
+- No introductory or closing sentences.
+
+CONTENT RULES:
+- State the plinth height ONLY if explicitly stated.
+- State terrain elevations ONLY if explicitly stated.
+- Explain what the height differences mean ONLY if explicitly stated.
+- Mention need for levelling, raising terrain, or ramps ONLY if explicitly stated.
+- Mention distance below plinth (e.g. 10–15 cm) ONLY if explicitly stated.
+- Mention access to additional soil ONLY if explicitly stated.
+- Mention contacting a landscaper ONLY if explicitly stated.
+
+TONE & WORDING RULES (IMPORTANT):
+- Prefer explanatory phrasing used in client examples, such as:
+  "This means that…"
+  "This requires…"
+  "Otherwise, the terrain appears…"
+  "We always recommend that…"
+- Keep sentences factual and advisory, not instructional.
+- Do not justify, defend, or argue recommendations.
+- Do not introduce risk or warning language unless written in the source.
+
+STRICTLY DO NOT:
+- Perform calculations or reinterpret numbers.
+- Add assumptions, estimates, or professional judgement.
+- Explain construction methods or execution steps.
+- Add drainage theory, regulations, or standards.
+- Add conclusions, summaries, or additional advice.
+- Use heavy technical or academic language.
+- Expand beyond the length, detail level, or tone of the client example.
+
+DOCUMENT_TEXT:
+{document_text}
