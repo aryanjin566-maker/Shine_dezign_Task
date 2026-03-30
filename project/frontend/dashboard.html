@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Upload Image</h2>
+
+    <input type="file" id="file"><br>
+
+    <img id="preview" width="200" style="display:none;"><br>
+
+    <button onclick="uploadImage()">Upload</button>
+    <button onclick="getResult()">Predict</button>
+
+    <h3 id="result"></h3>
+
+</div>
+
+<script>
+
+// 🔥 Preview
+file.addEventListener("change", function(e){
+    let reader = new FileReader();
+    reader.onload = function(){
+        preview.src = reader.result;
+        preview.style.display = "block";
+    }
+    reader.readAsDataURL(e.target.files[0]);
+});
+
+// 🔥 Upload
+async function uploadImage() {
+
+    let formData = new FormData();
+    formData.append("user_id", localStorage.getItem("user_id"));
+    formData.append("file", file.files[0]);
+
+    await fetch("http://127.0.0.1:8000/upload", {
+        method: "POST",
+        body: formData
+    });
+
+    alert("Uploaded!");
+}
+
+// 🔥 Predict
+async function getResult() {
+    let user_id = localStorage.getItem("user_id");
+
+    let response = await fetch(
+        "http://127.0.0.1:8000/get-result?user_id=" + user_id,
+        { method: "POST" }
+    );
+
+    let data = await response.json();
+
+    document.getElementById("result").innerText =
+        `${data.message}\nConfidence: ${(data.confidence * 100).toFixed(2)}%`;
+}
+</script>
+
+</body>
+</html>

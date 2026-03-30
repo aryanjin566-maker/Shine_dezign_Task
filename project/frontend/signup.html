@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signup</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Signup</h2>
+
+    <input type="text" id="name" placeholder="Name">
+    <input type="email" id="email" placeholder="Email">
+    <input type="text" id="password" placeholder="Password">
+
+    <button onclick="signup()">Sign Up</button>
+
+    <p id="result"></p>
+
+    <p>Already have account? <a href="login.html">Login</a></p>
+</div>
+
+<script>
+async function signup() {
+
+    let formData = new FormData();
+    formData.append("name", document.getElementById("name").value);
+    formData.append("email", document.getElementById("email").value);
+    formData.append("password", document.getElementById("password").value);
+
+    let response = await fetch("http://127.0.0.1:8000/signup", {
+        method: "POST",
+        body: formData   // 🔥 NOT headers
+    });
+
+    let data = await response.json();
+
+    document.getElementById("result").innerText =
+        "Your User ID: " + data.user_id;
+}
+</script>
+
+</body>
+</html>

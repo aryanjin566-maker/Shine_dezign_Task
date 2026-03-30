@@ -1,0 +1,42 @@
+<form id="uploadForm">
+
+    <label for="user_id"><b>User ID:</b></label><br>
+    <input type="text" id="user_id" placeholder="Enter your User ID"><br><br>
+
+    <label for="file"><b>Upload Image:</b></label><br>
+    <input type="file" id="file" accept="image/*"><br><br>
+
+    <button type="button" onclick="uploadImage()">Upload</button>
+    <button type="button" onclick="getResult()">Get Result</button>
+
+    <h3 id="result"></h3>
+
+</form>
+
+<script>
+async function uploadImage() {
+    let formData = new FormData();
+    formData.append("user_id", document.getElementById("user_id").value);
+    formData.append("file", document.getElementById("file").files[0]);
+
+    await fetch("http://127.0.0.1:8000/upload", {
+        method: "POST",
+        body: formData
+    });
+
+    alert("Image uploaded!");
+}
+
+async function getResult() {
+    let user_id = document.getElementById("user_id").value;
+
+    let response = await fetch(
+        "http://127.0.0.1:8000/get-result?user_id=" + user_id,
+        { method: "POST" }
+    );
+
+    let data = await response.json();
+
+    document.getElementById("result").innerText = data.message;
+}
+</script>
