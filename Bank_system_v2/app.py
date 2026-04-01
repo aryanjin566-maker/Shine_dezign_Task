@@ -11,7 +11,6 @@ UPLOAD_FOLDER = os.path.join(os.getcwd(), 'uploads')  # Absolute path
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
-
 # Database connection
 def get_db_connection():
     return mysql.connector.connect(
