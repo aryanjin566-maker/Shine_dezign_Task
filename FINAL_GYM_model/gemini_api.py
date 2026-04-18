@@ -4,7 +4,7 @@ import json
 import os
 
 # --- CONFIGURE YOUR KEY HERE ---
-genai.configure(api_key="AIzaSyDYKPuDtTw9Q92KQumor9NU_a6QkYBv7KU")
+genai.configure(api_key="")
 
 def get_safe_model_name():
     """Finds the correct Flash model dynamically to avoid version errors."""
